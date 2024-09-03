@@ -1,0 +1,76 @@
+ html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importante - Código de Indicação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f0f0f0;
+        }
+        #container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            color: #333;
+            font-size: 36px;
+        }
+        p {
+            color: #555;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #redirect-button, #copy-button {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #redirect-button:hover, #copy-button:hover {
+            background-color: #ff5252;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <h1>Não Esqueça o Código de Indicação!</h1>
+        <p>Para aproveitar todos os benefícios, use o código de indicação <strong id="promo-code">20JOM</strong> ao se registrar.</p>
+        <button id="copy-button" onclick="copyCode()">Copiar Código</button>
+        <p>Você será redirecionado para a página de cadastro em breve...</p>
+        <button id="redirect-button" onclick="redirectNow()">Clique aqui para continuar</button>
+    </div>
+
+    <script>
+        function redirectNow() {
+            window.location.href = "https://bancaparatodos.bet";
+        }
+
+        // Redireciona automaticamente após 60 segundos (1 minuto)
+        setTimeout(redirectNow, 60000);
+
+        function copyCode() {
+            const promoCode = document.getElementById('promo-code').innerText;
+            navigator.clipboard.writeText(promoCode).then(() => {
+                alert('Código copiado para a área de transferência!');
+            }).catch(err => {
+                alert('Falha ao copiar o código. Tente novamente.');
+            });
+        }
+    </script>
+
+</body>
+</html>
